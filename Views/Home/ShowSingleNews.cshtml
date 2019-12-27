@@ -1,0 +1,190 @@
+﻿@model Stranica.Models.Novosti
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_SingleNewsLayout.cshtml";
+}
+
+
+
+
+<section class="banner-bottom-w3ls-agileinfo py-5">
+    <!--/blog-->
+    <div class="container py-md-3">
+        <h2 class="heading text-capitalize mb-sm-5 mb-3"> Single Page </h2>
+        <div class="row inner-sec-wthree-agileits">
+            <div class="col-lg-8 blog-sp">
+                <article class="blog-x row">
+                    <div class="blog-img">
+                        <a href="single.html">
+                            <img src="~/Theme/images/1.jpg" alt="" class="img-fluid" />
+                        </a>
+                    </div>
+                    <div class="blog_info">
+                        <h5>
+                            <a href="single.html">@Model.Title</a>
+                        </h5>
+                        <p>
+                            By
+                            <a href="#" class="user-blog">@Model.Author</a>
+                        </p>
+
+                        <p>
+                            @Model.Text
+                        </p>
+                        <ul class="blog_list">
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-comment" aria-hidden="true"></span>
+                                    226
+                                </a>
+                                <i>|</i>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-heart" aria-hidden="true"></span>
+                                    19
+                                </a>
+                                <i>|</i>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="fa fa-tag" aria-hidden="true"></span>
+                                    13
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </article>
+                <div class="comment-top">
+                    <h4>Comments</h4>
+                    @foreach (var comment in Model.Komentari) { 
+                <div class="media mb-3">
+                    <img src="~/Theme/images/t1.jpg" alt="" class="img-fluid">
+                    <div class="media-body">
+                        <h5 class="mt-0">@comment.Author</h5>
+                        <p>
+                            @comment.Text
+                        </p>
+                    </div>
+                </div>
+                    }
+                    
+                   
+                </div>
+                <div class="comment-top">
+                    <h4>Leave a Comment</h4>
+                    <div class="comment-bottom">
+                        <form action="~/Home/LeaveComment" method="get">
+                            <input class="form-control" type="text" name="Name" placeholder="Name" required="">
+
+
+                            <textarea name="Message" placeholder="Message..." required=""></textarea>
+
+                            <input class="form-control" type="submit" value="Send">
+                            @Html.Hidden("id",Model.Id)
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-lg-4 single-left">
+                <div class="single-gd">
+                    <img src="~/Theme/images/a3.jpg" class="img-fluid" alt="">
+                    <h4>Sign up to our newsletter</h4>
+                    <form action="#" method="post">
+
+                        <input class="form-control" type="email" name="Email" placeholder="Email" required="">
+                        <div class="button">
+
+                            <input class="form-control" type="submit" value="Subscribe">
+
+                        </div>
+                    </form>
+                </div>
+                <div class="single-gd">
+                    <h4>Our Progress</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <div class="single-gd tech-btm">
+                    <h4>Top stories of the week </h4>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="single.html">
+                                <img src="~/Theme/images/a1.jpg" class="img-fluid mb-0" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="single.html">
+                                <img src="~/Theme/images/a2.jpg" class="img-fluid mb-0" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="blog-grids">
+                        <div class="blog-grid-left">
+                            <a href="single.html">
+                                <img src="~/Theme/images/a3.jpg" class="img-fluid mb-0" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5>
+                                <a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
+                            </h5>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                </div>
+                <div class="single-gd">
+                    <h4>Recent Post</h4>
+                    <img src="~/Theme/images/a1.jpg" class="img-fluid" alt="">
+                    <p>
+                        Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim sapien velit id felis ac cursus eros.
+                        Cras a ornare elit.
+                    </p>
+                </div>
+
+            </aside>
+
+        </div>
+
+
+    </div>
+
+</section>

@@ -1,0 +1,21 @@
+﻿@model List<Stranica.Models.Novosti>
+
+    <!-- latest news -->
+    <div class="news py-5 my-sm-3">
+        <div class="container">
+            <h3 class="heading text-capitalize mb-sm-5 mb-4"> Latest News </h3>
+            <div class="row news-grids">
+                @foreach (var news in Model)
+                {
+                    <div class="col-md-4 mt-md-0 mt-5 newsgrid1 text-center">
+                        <img src="~/Theme/images/3.jpg" alt="news image" class="img-fluid" /> 
+                        <h4 class=" mt-4 text-uppercase">@news.Title</h4>
+                        <p class="mt-4">@news.Text</p>
+                        <a href="@Url.Action("ShowSingleNews","Home",new {id=news.Id })">View Post</a>
+                    </div>
+                }
+               
+            </div>
+        </div>
+    </div>
+    <!-- //latest news -->
